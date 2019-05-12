@@ -1,0 +1,14 @@
+{
+    "private": true,
+    "scripts": {
+        "build:server": "lerna run build --scope=@abb/common --scope=@abb/server",
+        "build:web": "lerna run build --scope=@abb/common --scope=@abb/web"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "name": "abb",
+    "devDependencies": {
+        "lerna": "^3.13.4"
+    }
+}
