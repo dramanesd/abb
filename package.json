@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "build:server": "lerna run build --scope=@abb/common --scope=@abb/server",
-        "build:web": "lerna run build --scope=@abb/common --scope=@abb/web"
+        "build:web": "lerna run build --scope=@abb/common --scope=@abb/web --scope=@abb/controller"
     },
     "workspaces": [
         "packages/*"
@@ -10,7 +10,8 @@
     "nohoist": [
         "**/react-native-elements",
         "**/react-native-elements/**",
-        "**/react-native", "**/react-native/**",
+        "**/react-native",
+        "**/react-native/**",
         "**/expo",
         "**/expo/**",
         "**/react-native-typescript-transformer",
