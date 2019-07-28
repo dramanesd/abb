@@ -4,7 +4,7 @@ import gql from "graphql-tag";
 import {
   RegisterMutation,
   RegisterMutationVariables
-} from "./__generated__/RegisterMutation";
+} from "../../schemaTypes";
 
 interface Props {
   children: (data: {
