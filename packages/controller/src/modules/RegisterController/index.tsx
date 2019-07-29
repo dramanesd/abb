@@ -1,15 +1,12 @@
 import * as React from "react";
 import { graphql, ChildMutateProps } from "react-apollo";
 import gql from "graphql-tag";
-import {
-  RegisterMutation,
-  RegisterMutationVariables
-} from "../../schemaTypes";
+import { RegisterMutation, RegisterMutationVariables } from "../../schemaTypes";
 
 interface Props {
-  children: (data: {
-    submit: (values: RegisterMutationVariables) => Promise<null>;
-  }) => JSX.Element | null;
+  children: (
+    data: { submit: (values: RegisterMutationVariables) => Promise<null> }
+  ) => JSX.Element | null;
 }
 
 class C extends React.PureComponent<

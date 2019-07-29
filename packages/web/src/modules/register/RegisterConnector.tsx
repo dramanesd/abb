@@ -1,6 +1,6 @@
 import * as React from "react";
-import { RegisterController } from "@abb/controller";
 
+import { RegisterController } from "@abb/controller";
 import { RegisterView } from "./ui/RegisterView";
 
 // container -> view
