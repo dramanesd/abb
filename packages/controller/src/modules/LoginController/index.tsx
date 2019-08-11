@@ -3,18 +3,15 @@ import { graphql, ChildMutateProps } from "react-apollo";
 import gql from "graphql-tag";
 import { LoginMutation, LoginMutationVariables } from "../../schemaTypes";
 import { normalizeErrors } from "../../utils/normalizeErrors";
+import { NormalizedErrorMap } from "src/types/NormalizeErrorMap";
 
 interface Props {
-  onSessionId?: (sessionId: string) => void
-  children: (
-    data: {
-      submit: (
-        values: LoginMutationVariables
-      ) => Promise<{
-        [key: string]: string;
-      } | null>;
-    }
-  ) => JSX.Element | null;
+  onSessionId?: (sessionId: string) => void;
+  children: (data: {
+    submit: (
+      values: LoginMutationVariables
+    ) => Promise<NormalizedErrorMap | null>;
+  }) => JSX.Element | null;
 }
 
 class C extends React.PureComponent<
@@ -23,7 +20,9 @@ class C extends React.PureComponent<
   submit = async (values: LoginMutationVariables) => {
     console.log(values);
     const {
-      data: { login: {errors, sessionId} }
+      data: {
+        login: { errors, sessionId }
+      }
     } = await this.props.mutate({
       variables: values
     });
